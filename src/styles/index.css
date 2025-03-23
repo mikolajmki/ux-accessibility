@@ -57,3 +57,50 @@ Custom Scrollbar for a specific div
 .customScroll::-webkit-scrollbar-thumb:hover {
   background-color: #f65752;
 }
+
+.invertColors {
+  filter: invert(1);
+}
+
+.monochrome {
+  filter: grayscale(1);
+}
+
+.darkContrast {
+  background-color: black;
+  color: white;
+}
+
+.lightContrast {
+  background-color: white;
+  color: black;
+}
+
+.lowSaturation {
+  filter: saturate(0);
+}
+
+.highSaturation {
+  filter: saturate(2);
+}
+
+.highlightLinks {
+  a {
+    background-color: yellow;
+  }
+}
+
+.highlightHeadings {
+  h1, h2, h3 {
+    background-color: yellow;
+  }
+}
+
+.screenReaderMode {
+}
+
+.readingMode {
+  background-color: #f4f4f4;
+  color: #333;
+  font-family: 'Georgia', serif;
+} 

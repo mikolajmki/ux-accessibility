@@ -3,16 +3,16 @@ import React, { useEffect, useState } from "react";
 
 const Accessibility = () => {
 const [s, setS] = useState({
-    invertColors: true,
-    monochrome: true,
-    darkContrast: true,
-    lightContrast: true,
-    lowSaturation: true,
-    highSaturation: true,
-    highlightLinks: true,
-    highlightHeadlines: true,
-    screenReader: true,
-    readingMode: true,
+    invertColors: false,
+    monochrome: false,
+    darkContrast: false,
+    lightContrast: false,
+    lowSaturation: false,
+    highSaturation: false,
+    highlightLinks: false,
+    highlightHeadlines: false,
+    screenReader: false,
+    readingMode: false,
     contentScaling : 0,
     font: 16,
     lineHeight : 10,
@@ -44,16 +44,16 @@ useEffect(() => {
 
     // Resetowanie klas
     body.classList.remove(
-      'invert-colors',
-      'monochrome',
-      'dark-contrast',
-      'light-contrast',
-      'low-saturation',
-      'high-saturation',
-      'highlight-links',
-      'highlight-headings',
-      'screen-reader-mode',
-      'reading-mode'
+      css.invertColors,
+      css.monochrome,
+      css.darkContrast,
+      css.lightContrast,
+      css.lowSaturation,
+      css.highSaturation,
+      css.highlightLinks,
+      css.highlightHeadings,
+      css.screenReaderMode,
+      css.readingMode
     );
 
     // Dodawanie odpowiednich klas do ciała strony
@@ -67,9 +67,22 @@ useEffect(() => {
     if (s.highlightHeadlines) body.classList.add(css.highlightHeadings);
     if (s.screenReader) body.classList.add(css.screenReaderMode);
     if (s.readingMode) body.classList.add(css.readingMode);
-
+	
+	console.log(
+		css.invertColors,
+		css.monochrome,
+		css.darkContrast,
+		css.lightContrast,
+		css.lowSaturation,
+		css.highSaturation,
+		css.highlightLinks,
+		css.highlightHeadings,
+		css.screenReaderMode,
+		css.readingMode,
+  	)
+	
     // Zmiana powiększenia i rozmiaru czcionki
-    body.style.zoom = `${s.contentScaling}`;
+    body.style.zoom = `${(s.contentScaling + 100	) / 100}`;
     body.style.fontSize = `${s.font}px`;
     body.style.lineHeight = `${s.lineHeight / 10}`;
     body.style.letterSpacing = `${s.letterSpacing}px`;
@@ -97,6 +110,22 @@ useEffect(() => {
             case "Zmniejsz wysokości linii": setS(prevState => { if (prevState.lineHeight > 0) { return ({ ...prevState, lineHeight: prevState.lineHeight - 1}); } return prevState} ); break;
             case "Zwiększ odstęp liter": setS(prevState => { if (prevState.letterSpacing < 100) { return ({ ...prevState, letterSpacing: prevState.letterSpacing + 1}); } return prevState} ); break;
             case "Zmniejsz odstęp liter": setS(prevState => { if (prevState.letterSpacing > 0) { return ({ ...prevState, letterSpacing: prevState.letterSpacing - 1}); } return prevState} ); break;
+            case "Reset": setS({
+				invertColors: false,
+				monochrome: false,
+				darkContrast: false,
+				lightContrast: false,
+				lowSaturation: false,
+				highSaturation: false,
+				highlightLinks: false,
+				highlightHeadlines: false,
+				screenReader: false,
+				readingMode: false,
+				contentScaling : 0,
+				font: 16,
+				lineHeight : 10,
+				letterSpacing : 0,
+			}); break;
         }
 
         console.log(s);
