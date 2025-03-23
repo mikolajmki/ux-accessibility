@@ -1,0 +1,104 @@
+/* .invertColors {
+    filter: invert(1);
+  }
+  
+  .monochrome {
+    filter: grayscale(1);
+  }
+  
+  .darkContrast {
+    background-color: black;
+    color: white;
+  }
+  
+  .lightContrast {
+    background-color: white;
+    color: black;
+  }
+  
+  .lowSaturation {
+    filter: saturate(0);
+  }
+  
+  .highSaturation {
+    filter: saturate(2);
+  }
+  
+  .highlightLinks {
+    a {
+      background-color: yellow;
+    }
+  }
+  
+  .highlightHeadings {
+    h1, h2, h3 {
+      background-color: yellow;
+    }
+  }
+  
+  .screenReaderMode {
+  }
+  
+  .readingMode {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Georgia', serif;
+  } */
+
+.mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+}
+/* 
+.mainDiv {
+    height: 20rem;
+    padding-top: 5rem;
+} */
+
+.mainUl {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+    gap: 1rem;
+}
+
+.mainUl > li > button {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;    
+}
+.mainUl > li > button > :first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.mainUl > li > button > :last-child {
+    font-size: 12px;
+}
+
+.mainUl > li > span {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.mainUl > li > span > *  {
+    display: flex;
+    width: 12rem;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.mainUl > li > button > :last-child {
+    font-size: 12px;
+}
